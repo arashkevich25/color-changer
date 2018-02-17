@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import ColorSelectSearch from './../../components/ColorSelectSearch/ColorSelectSearch';
+import ColorSelectSearch from '../../components/ColorsList/ColorsList';
 import Footer from './../../components/Footer/Footer';
 import Header from './../../components/Header/Header';
 
@@ -73,8 +73,8 @@ export default class MainView extends PureComponent {
                                    hideList={hideList}
                                    showList={showList}
                 />
-                <ChangeButton onClick={this.onClickChangeColor}>Change</ChangeButton>
-                <Footer footerText={`Artur Rashkevich ${new Date().getFullYear()}`}/>
+                <ChangeButton onClick={this.onClickChangeColor}>Accept</ChangeButton>
+                <Footer footerText={`Artur Rashkevich`}/>
             </Body>
         );
     }

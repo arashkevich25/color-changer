@@ -20,6 +20,6 @@ export default class DataList extends PureComponent {
     }
 
     render() {
-        return <datalist id="color-select-search">{this.renderOptions()}</datalist>
+        return <datalist id="colors-list">{this.renderOptions()}</datalist>
     }
 }

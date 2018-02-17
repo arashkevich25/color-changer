@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import DataList from './components/DataList';
 
+import {convertHexToGb} from './../../tools/converter';
+
 export default class ColorSelectSearch extends PureComponent {
 
     static propTypes = {
@@ -24,7 +26,7 @@ export default class ColorSelectSearch extends PureComponent {
 
         if (e.target.value.length > 1) {
             const selectedColor = optionsArr.find(val => val.name === e.target.value);
-            selectedColor ? setSelectedColor(`#${selectedColor.hex}`) : null;
+            selectedColor ? setSelectedColor(convertHexToGb(selectedColor.hex, 0.5)) : null;
             showList();
         } else {
             hideList();
@@ -36,7 +38,7 @@ export default class ColorSelectSearch extends PureComponent {
 
         return (
             <div>
-                <input onChange={this.onChangeHandle} list="color-select-search" name="color-select-search" />
+                <input onChange={this.onChangeHandle} list="colors-list" name="colors-list" />
                 {
                     visibleList ? <DataList optionsArr={optionsArr}/> : null
                 }
