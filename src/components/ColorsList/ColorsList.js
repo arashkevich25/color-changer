@@ -15,8 +15,8 @@ export default class ColorSelectSearch extends PureComponent {
         visibleList: PropTypes.bool.isRequired,
     };
 
-    constructor(...args) {
-        super(...args);
+    constructor() {
+        super();
 
         this.onChangeHandle = this.onChangeHandle.bind(this);
     }
