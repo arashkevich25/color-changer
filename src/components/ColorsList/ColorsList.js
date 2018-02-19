@@ -15,8 +15,8 @@ export default class ColorSelectSearch extends PureComponent {
         visibleList: PropTypes.bool.isRequired,
     };
 
-    constructor() {
-        super();
+    constructor(...args) {
+        super(...args);
 
         this.onChangeHandle = this.onChangeHandle.bind(this);
     }
@@ -26,7 +26,11 @@ export default class ColorSelectSearch extends PureComponent {
 
         if (e.target.value.length > 1) {
             const selectedColor = optionsArr.find(val => val.name === e.target.value);
-            selectedColor ? setSelectedColor(convertHexToGb(selectedColor.hex, 0.5)) : null;
+
+            if(selectedColor) {
+                setSelectedColor(convertHexToGb(selectedColor.hex, 0.5));
+            }
+
             showList();
         } else {
             hideList();

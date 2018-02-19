@@ -66,7 +66,7 @@ export default class MainView extends PureComponent {
 
         return (
             <Body color={backgroundColor}>
-                <Header headerText="Background color changer"/>
+                <Header>Background color changer</Header>
                 <ColorSelectSearch optionsArr={allColors}
                                    setSelectedColor={setSelectedColor}
                                    visibleList={visibleList}
@@ -74,7 +74,7 @@ export default class MainView extends PureComponent {
                                    showList={showList}
                 />
                 <ChangeButton onClick={this.onClickChangeColor}>Accept</ChangeButton>
-                <Footer footerText={`Artur Rashkevich`}/>
+                <Footer>Artur Rashkevich</Footer>
             </Body>
         );
     }
